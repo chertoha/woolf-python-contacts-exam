@@ -12,6 +12,9 @@ def catch(func):
         except WrongCommandException as err:
             print(err)
 
+        except ValueError as err:
+            print(err)
+
         except Exception as err:
             print(err)
 
