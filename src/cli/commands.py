@@ -2,14 +2,14 @@ from typing import List
 from cli.config import Commands
 from decorators.catch import catch
 from exceptions.wrong_command_exception import WrongCommandException
-from services.command_handle_service import CommandHandleService
+from services.contact_book_service import ContacBookService
 
 
 commands = {
-    Commands.ADD: CommandHandleService.add,
-    Commands.FIND: CommandHandleService.find,
-    Commands.UPDATE: CommandHandleService.update,
-    Commands.BIRTHDAY: CommandHandleService.birthday,
+    Commands.ADD: ContacBookService.add,
+    Commands.FIND: ContacBookService.find,
+    Commands.UPDATE: ContacBookService.update,
+    Commands.BIRTHDAY: ContacBookService.birthday,
 }
 
 

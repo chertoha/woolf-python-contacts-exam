@@ -27,7 +27,7 @@ class ContactBook(UserList[Record]):
             #         searched_value in birthday or
             #         searched_value in phones):
 
-            if searched_value in searchable:
+            if searched_value.lower() in searchable.lower():
                 row = dict(name=name, email=email, address=address,
                            birthday=birthday, phones=phones)
                 res.append(row)
@@ -38,5 +38,5 @@ class ContactBook(UserList[Record]):
         self.data = [record for record in self.data if str(
             record.name) != searched_name]
 
-    def find_record(self, searched_name: str) -> Record:
-        return next(record for record in self.data if str(record.name) == searched_name)
+    def find_record(self, searched_name: str) -> Record | None:
+        return next((record for record in self.data if str(record.name) == searched_name), None)

@@ -76,3 +76,6 @@ class Record:
             self.__phones) if str(phone) == old_phone)
 
         self.__phones[index] = Phone(new_phone)
+
+    def find_phone(self, searched_phone: str) -> Phone | None:
+        return next((phone for phone in self.__phones if str(phone) == searched_phone), None)

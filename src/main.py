@@ -2,7 +2,6 @@ import readline
 from cli.commands import execute_command
 from cli.config import Commands
 from cli.parser import parse_input
-from services.command_handle_service import CommandHandleService
 
 
 def completer(text, state):
@@ -19,6 +18,7 @@ def main() -> None:
     readline.parse_and_bind("tab: complete")  # type: ignore
 
     while True:
+
         user_input = input("Enter a command: ").strip()
         command, *args = parse_input(user_input)
 
