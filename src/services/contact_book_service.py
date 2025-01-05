@@ -3,6 +3,7 @@ from decorators.catch import catch
 from entities.record import Record
 from exceptions.wrong_arguments_number_exception import WrongArgumentsNumberException
 from services.organizer import contact_book
+from pprint import pprint
 
 
 class ContacBookService:
@@ -34,13 +35,10 @@ class ContacBookService:
     @staticmethod
     @catch
     def find(args: List[str]):
-
         search = ""
-
         if len(args) != 0:
             search = args[0]
-
-        print(contact_book.retrieve_contacts(search))
+        pprint(contact_book.retrieve_contacts(search))
 
     @staticmethod
     @catch

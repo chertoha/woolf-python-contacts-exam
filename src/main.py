@@ -19,14 +19,18 @@ def main() -> None:
 
     while True:
 
-        user_input = input("Enter a command: ").strip()
-        command, *args = parse_input(user_input)
+        try:
+            user_input = input("Enter a command: ").strip()
+            command, *args = parse_input(user_input)
 
-        if command in ["exit", "quit", "end"]:
-            print("Bye!")
-            break
+            if command in ["exit", "quit", "end"]:
+                print("Bye!")
+                break
 
-        execute_command(command, args)
+            execute_command(command, args)
+
+        except Exception as err:
+            print(err)
 
 
 if __name__ == "__main__":

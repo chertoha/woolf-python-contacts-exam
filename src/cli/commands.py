@@ -10,6 +10,7 @@ commands = {
     Commands.FIND: ContacBookService.find,
     Commands.UPDATE: ContacBookService.update,
     Commands.BIRTHDAY: ContacBookService.birthday,
+
 }
 
 
